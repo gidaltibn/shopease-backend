@@ -2,6 +2,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_jwt_extended import JWTManager  # Importar JWTManager
+from flask_cors import CORS
 from app.models import db
 from app.controllers.auth_controller import auth_bp
 from app.controllers.cart_controller import cart_bp
@@ -10,6 +11,7 @@ from app.controllers.order_controller import order_bp
 
 def create_app():
     app = Flask(__name__)
+    CORS(app)
     app.config.from_object('app.config.Config')
 
     # Inicializar o banco de dados e JWT
