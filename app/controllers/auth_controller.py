@@ -36,7 +36,7 @@ def login():
     # Gerar token JWT
     access_token = create_access_token(identity=user.id)
 
-    return jsonify({'access_token': access_token}), 200
+    return jsonify({'access_token': access_token, 'user': user.username}), 200
 
 # Lista para armazenar tokens bloqueados
 blacklist = set()

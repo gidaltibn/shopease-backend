@@ -64,6 +64,28 @@ def add_to_cart():
         'product': product['title'],
         'quantity': cart_item.quantity
     }), 200
+    
+@cart_bp.route('/update', methods=['POST'])
+@jwt_required()
+def update_cart():
+    user_id = get_jwt_identity()
+    data = request.get_json()
+    product_id = data.get('product_id')
+    quantity = data.get('quantity')
+
+    # Verificar se o carrinho do usuário existe
+    cart = Cart.query.filter_by(user_id=user_id).first()
+    if not cart:
+        return jsonify({'message': 'Cart not found'}), 404
+
+    # Verificar se o produto está no carrinho
+    cart_item = CartItem.query.filter_by(cart_id=cart.id, product_id=product_id).first()
+    if cart_item:
+        cart_item.quantity = quantity
+        db.session.commit()
+        return jsonify({'message': 'Cart updated'}), 200
+    else:
+        return jsonify({'message': 'Product not found in cart'}), 404
 
 
 @cart_bp.route('/remove', methods=['POST'])
