@@ -6,7 +6,7 @@
 ## Funcionalidades
 
 - **Autenticação JWT**: Registro e login de usuários com geração de token JWT.
-- **Carrinho de compras**: Adicionar, remover e listar produtos no carrinho.
+- **Carrinho de compras**: Adicionar, remover e listar produtos no carrinho e alterar quantidade.
 - **Pedidos**: Finalizar pedido (checkout) e consultar histórico de pedidos.
 - **Integração com FakeStore API**: Busca de produtos via API externa.
 - **Persistência de dados**: Utiliza **SQLite** para armazenar dados de usuários, produtos no carrinho e pedidos.
