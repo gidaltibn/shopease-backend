@@ -179,18 +179,3 @@ services:
 
 - Todas as rotas protegidas (como `/cart`, `/orders`, e `/checkout`) exigem o token JWT no cabeçalho de autorização.
 - O projeto utiliza **SQLite** por padrão, mas pode ser facilmente modificado para utilizar **PostgreSQL** ou **MySQL** alterando a string de conexão no arquivo `config.py`.
-
-## Contribuição
-
-Contribuições são bem-vindas! Para contribuir, siga os passos abaixo:
-
-1. Faça um fork do projeto.
-2. Crie uma branch para sua feature (`git checkout -b feature/nova-feature`).
-3. Faça commit das suas alterações (`git commit -m 'Adiciona nova feature'`).
-4. Envie sua branch (`git push origin feature/nova-feature`).
-5. Abra um Pull Request.
-
-```
-
-Esse `README.md` agora contém a explicação completa do projeto, incluindo a necessidade de enviar o token JWT nas rotas protegidas, além de todas as instruções para rodar a aplicação com e sem Docker.
-```
