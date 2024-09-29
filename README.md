@@ -46,44 +46,6 @@ Antes de começar, você precisará ter o [Docker](https://www.docker.com/get-st
 
    A API estará disponível em `http://localhost:5000`.
 
-### Rodando Localmente (sem Docker)
-
-1. **Clone o repositório:**
-
-   ```bash
-   git clone https://github.com/seu-usuario/shopease-backend.git
-   cd shopease-backend
-   ```
-
-2. **Crie e ative um ambiente virtual:**
-
-   ```bash
-   python3 -m venv venv
-   source venv/bin/activate  # No Windows use `venv\Scripts\activate`
-   ```
-
-3. **Instale as dependências:**
-
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **Configure o banco de dados SQLite:**
-
-   ```bash
-   flask db init
-   flask db migrate -m "Initial migration"
-   flask db upgrade
-   ```
-
-5. **Execute a aplicação:**
-
-   ```bash
-   flask run
-   ```
-
-   A API estará disponível em `http://localhost:5000`.
-
 ## Rotas da API
 
 ### Autenticação
